@@ -1,0 +1,15 @@
+---
+- name: Git Pull from Version Control
+  command: git pull
+  args:
+    chdir: /home/passenger/drifting_ruby
+
+- name: Bundle
+  command: bash -lc "bundle"
+  args:
+    chdir: /home/passenger/drifting_ruby
+
+- name: Precompile Assets
+  command: bash -lc "RAILS_ENV=production rake assets:precompile"
+  args:
+    chdir: /home/passenger/drifting_ruby

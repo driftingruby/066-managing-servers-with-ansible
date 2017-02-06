@@ -1,0 +1,5 @@
+---
+- name: Run Migrations
+  command: bash -lc "RAILS_ENV=production rake db:migrate"
+  args:
+    chdir: /home/passenger/drifting_ruby

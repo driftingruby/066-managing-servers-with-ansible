@@ -1,0 +1,4 @@
+[servers]
+DR1   ansible_host=192.168.1.25   ansible_user=passenger   
+DR2   ansible_host=192.168.1.26   ansible_user=passenger
+DR3   ansible_host=192.168.1.21   ansible_user=passenger

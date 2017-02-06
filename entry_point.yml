@@ -1,0 +1,27 @@
+- hosts: DR1
+  vars_files:
+    - "vars/public.yml"
+  remote_user: "{{remote_user}}"
+  roles:
+    - app-update
+    - run-migrations
+    - restart-nginx
+    - restart-sidekiq
+
+- hosts: DR2,DR3
+  vars_files:
+    - "vars/public.yml"
+  remote_user: "{{remote_user}}"
+  roles:
+    - app-update
+    - restart-nginx
+    - restart-sidekiq
+
+# - hosts: servers
+#   vars_files:
+#     - "vars/public.yml"
+#   remote_user: "{{remote_user}}"
+#   roles:
+#     - app-update
+#     - restart-nginx
+#     - restart-sidekiq
